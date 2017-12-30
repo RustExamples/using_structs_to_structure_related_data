@@ -6,18 +6,9 @@ struct User {
 }
 
 fn main() {
-    // Fields can't be modified
-    let u_vms = User {
-        username: String::from("vms20591"),
-        email: String::from("vms20591@gmail.com"),
-        sign_in_count: 0,
-        active: true
-    };
+    struct Color(i32, i32, i32);
+    struct Point(i32, i32, i32);
 
-    // Create instance from another with "Struct update syntax"
-    let u_xyz = User {
-        username: String::from("xyz"),
-        email: String::from("xyz@gmail.com"),
-        ..u_vms // Fill in other fields from u_vms instance
-    };
+    let black = Color(5, 5, 5);
+    let point = Color(5, 5, 5);
 }
