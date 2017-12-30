@@ -33,8 +33,8 @@ fn main() {
 
 fn build_user(username: String, email: String) -> User {
     User {
-        username: username,
-        email: email,
+        username,
+        email,
         active: true,
         sign_in_count: 0
     }
