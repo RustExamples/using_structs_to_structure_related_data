@@ -1,14 +1,10 @@
-struct User {
-    username: String,
-    email: String,
-    sign_in_count: u64,
-    active: bool
+fn main() {
+    let width1 = 30;
+    let height1 = 50;
+    
+    println!("Area of rectangle is {} sq. pixels", area(width1, height1));
 }
 
-fn main() {
-    struct Color(i32, i32, i32);
-    struct Point(i32, i32, i32);
-
-    let black = Color(5, 5, 5);
-    let point = Color(5, 5, 5);
+fn area(width: u32, height: u32) -> u32 {
+    width * height
 }
