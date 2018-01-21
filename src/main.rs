@@ -30,6 +30,19 @@ fn main() {
 
     // {:#?} -> Pretty print debug information
     println!("rect1 is {:#?}", rect1);
+
+    let rect2 = Rectangle {
+        width: 30,
+        height: 40
+    };
+
+    let rect3 = Rectangle {
+        width: 200,
+        height: 50
+    };
+
+    println!("can rect1 hold rect2: {}", rect1.can_hold(&rect2));
+    println!("can rect1 hold rect3: {}", rect1.can_hold(&rect3));
 }
 
 // Organize and  group methods of Struct
@@ -40,5 +53,9 @@ impl Rectangle {
     // Rust knows the context of function
     fn area(&self) -> u32 {
         self.width * self.height
+    }
+
+    fn can_hold(&self, rect: &Rectangle) -> bool {
+        rect.width <= self.width && rect.height <= self.height
     }
 }
