@@ -43,6 +43,10 @@ fn main() {
 
     println!("can rect1 hold rect2: {}", rect1.can_hold(&rect2));
     println!("can rect1 hold rect3: {}", rect1.can_hold(&rect3));
+
+    let square = Rectangle::square(30);
+
+    println!("square is {:#?}", square);
 }
 
 // Organize and  group methods of Struct
@@ -57,5 +61,16 @@ impl Rectangle {
 
     fn can_hold(&self, rect: &Rectangle) -> bool {
         rect.width <= self.width && rect.height <= self.height
+    }
+
+    // Associated functions belong to struct
+    // Doesn't have "self" as first param
+    // Often used as constructor like "String::from()"
+    // Called using "::" like "Rectange::square(10)"
+    fn square(size: u32) -> Rectangle {
+        Rectangle {
+            width: size,
+            height: size
+        }
     }
 }
