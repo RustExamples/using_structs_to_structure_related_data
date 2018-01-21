@@ -58,7 +58,11 @@ impl Rectangle {
     fn area(&self) -> u32 {
         self.width * self.height
     }
+}
 
+// struct can have multiple impl blocks
+// Used during generics & traits
+impl Rectangle {
     fn can_hold(&self, rect: &Rectangle) -> bool {
         rect.width <= self.width && rect.height <= self.height
     }
